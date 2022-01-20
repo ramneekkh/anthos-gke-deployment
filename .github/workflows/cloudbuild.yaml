@@ -42,7 +42,7 @@ jobs:
       name: 'Authenticate to Google Cloud'
       uses: 'google-github-actions/auth@v0'
       with:
-         workload_identity_provider: 'projects/998851800110/locations/global/workloadIdentityPools/anthos-gke-pool/providers/anthos-gke-provider' 
+         workload_identity_provider: 'projects/1030236463846/locations/global/workloadIdentityPools/example-pool/providers/example-gh-provider' 
          service_account: 'codebuild-gitflow@kcc-clean.iam.gserviceaccount.com'
 
 
