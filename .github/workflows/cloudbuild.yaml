@@ -51,27 +51,3 @@ jobs:
       run: |-
         gcloud builds submit --config=./buildconfig-anthos.yaml
  
-
-  deploy:
-    needs: DeployGKE
-    name: DeployAnthos
-    environment: 
-      name: staging
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      
-    # Setup Google Auth 
-    - id: 'auth'
-      name: 'Authenticate to Google Cloud'
-      uses: 'google-github-actions/auth@v0'
-      with:
-         workload_identity_provider: 'projects/998851800110/locations/global/workloadIdentityPools/example-pool/providers/example-gh-provider'
-         service_account: 'codebuild-gitflow@kcc-clean.iam.gserviceaccount.com'
-
-    # Build and push image to Google Container Registry
-    - name: Build
-      run: |-
-        gcloud builds submit --config=./buildconfig-gke.yaml
