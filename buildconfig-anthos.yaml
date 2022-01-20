@@ -8,5 +8,5 @@ steps:
     set -x && \
     export KUBECONFIG="$(pwd)/gateway-kubeconfig" && \
     gcloud container hub memberships get-credentials aws-cluster-0 && \
-    kubectl --kubeconfig gateway-kubeconfig get po -A
+    kubectl --kubeconfig gateway-kubeconfig app -f myapp.yaml
 
