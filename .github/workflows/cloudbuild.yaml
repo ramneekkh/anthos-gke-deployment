@@ -43,7 +43,7 @@ jobs:
       uses: 'google-github-actions/auth@v0'
       with:
          workload_identity_provider: 'projects/1030236463846/locations/global/workloadIdentityPools/example-pool/providers/example-gh-provider' 
-         service_account: 'codebuild-gitflow@kcc-clean.iam.gserviceaccount.com'
+         service_account: 'codebuild-gitflow@gke-test-320301.iam.gserviceaccount.com'
 
 
     # Build and push image to Google Container Registry
