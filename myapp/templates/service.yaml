@@ -3,8 +3,7 @@ kind: Service
 metadata:
   name: {{ include "myapp.fullname" . }}
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-type: nlb
-    service.beta.kubernetes.io/aws-load-balancer-subnets: subnet-0a8a6ca5a08d42580 
+    {{- toYaml .Values.service.annotations | nindent 4 }}
   labels:
     {{- include "myapp.labels" . | nindent 4 }}
 spec:
