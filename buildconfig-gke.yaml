@@ -1,6 +1,6 @@
 steps:
 - name: "gcr.io/kcc-clean/helm"
-  args: ['upgrade', '--install', 'storagebucket', './storagebucket', '--dry-run']
+  args: ['upgrade', '--install', 'myapp', './myapp', '-f', './myapp/values-gke.yaml']
   env:
   - 'CLOUDSDK_COMPUTE_REGION=asia-southeast1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=automation-cluster'
