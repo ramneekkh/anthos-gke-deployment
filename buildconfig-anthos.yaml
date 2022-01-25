@@ -1,5 +1,5 @@
 steps:
-- name: "gcr.io/kcc-clean/helm"
+- name: "gcr.io/gke-test-320301/helm"
   args: ['upgrade', '--install', 'myapp', './myapp', '-f', './myapp/values-anthos-aws.yaml']
   env:
   - 'CLOUDSDK_COMPUTE_REGION=us-central1'
