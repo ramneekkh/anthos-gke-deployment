@@ -21,7 +21,7 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.RUN_PROJECT }}
-  SERVICE_NAME: KCC build and deploy workflow
+  SERVICE_NAME: GKE and Anthos Deployment
 # Add "id-token" with the intended permissions.
 permissions:
   contents: 'read'
@@ -42,8 +42,8 @@ jobs:
       name: 'Authenticate to Google Cloud'
       uses: 'google-github-actions/auth@v0'
       with:
-         workload_identity_provider: 'projects/998851800110/locations/global/workloadIdentityPools/github-pool1/providers/gke-gh-provider1' 
-         service_account: 'codebuild-gitflow@gke-test-320301.iam.gserviceaccount.com'
+         workload_identity_provider: 'projects/998851800110/locations/global/workloadIdentityPools/example-pool1/providers/example-gh-provider1' 
+         service_account: 'codebuild-gitflow@kcc-clean.iam.gserviceaccount.com' 
 
 
     # Build and push image to Google Container Registry
@@ -69,7 +69,7 @@ jobs:
       uses: 'google-github-actions/auth@v0'
       with:
          workload_identity_provider: 'projects/1030236463846/locations/global/workloadIdentityPools/example-pool/providers/example-gh-provider' 
-         service_account: 'codebuild-gitflow@kcc-clean.iam.gserviceaccount.com'
+         service_account: 'codebuild-gitflow@gke-test-320301.iam.gserviceaccount.com'
 
     # Build and push image to Google Container Registry
     - name: Build
