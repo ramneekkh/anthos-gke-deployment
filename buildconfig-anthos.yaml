@@ -2,6 +2,6 @@ steps:
 - name: "gcr.io/gke-test-320301/helm"
   args: ['upgrade', '--install', 'myapp', './myapp', '-f', './myapp/values-anthos-aws.yaml']
   env:
-  - 'CLOUDSDK_COMPUTE_REGION=us-central1'
+  - 'CLOUDSDK_COMPUTE_REGION=us-west1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=aws-cluster-0'
 
