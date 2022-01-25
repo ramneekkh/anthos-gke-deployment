@@ -3,5 +3,5 @@ steps:
   args: ['upgrade', '--install', 'myapp', './myapp', '-f', './myapp/values-anthos-aws.yaml']
   env:
   - 'CLOUDSDK_COMPUTE_REGION=us-central1'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=aws-cluster-0
+  - 'CLOUDSDK_CONTAINER_CLUSTER=aws-cluster-0'
 
