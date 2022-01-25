@@ -1,10 +1,7 @@
 steps:
 - name: "gcr.io/kcc-clean/helm"
-  args: ['upgrade', '--install', 'storagebucket', './storagebucket', '--dry-run']
+  args: ['upgrade', '--install', 'myapp', './myapp', '-f', './myapp/values-anthos-aws.yaml']
   env:
-  - 'CLOUDSDK_COMPUTE_REGION=asia-southeast1'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=automation-cluster'
-options:
-  workerPool:
-    'projects/kcc-clean/locations/asia-southeast1/workerPools/PRIVATE_POOL_NAME'
+  - 'CLOUDSDK_COMPUTE_REGION=us-central1'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=aws-cluster-0
 
